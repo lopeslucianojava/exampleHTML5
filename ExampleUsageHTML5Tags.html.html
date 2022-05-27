@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 Color Input Type</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  
+<style>
+    input[type="email"]:valid{
+        outline: 2px solid green;
+    }
+    input[type="email"]:invalid{
+        outline: 2px solid red;
+    }
+	canvas {
+		border: 1px solid #000;
+	}
+</style>
+
+<script>
+    function getValueMycolor() {
+        var color = document.getElementById("mycolor").value;
+        alert(color);
+    }
+	
+	function getValueMyDate() {
+        var email = document.getElementById("mydate").value;
+        alert(email);
+    }
+	
+	function getValueMyemail() {
+        var email = document.getElementById("myemail").value;
+        alert(email);
+    }
+	
+	 function getValueMydatetime() {
+        var datetime = document.getElementById("mydatetime").value;
+        alert(datetime);
+    }
+	
+	function getValueMytime() {
+        var time = document.getElementById("mytime").value;
+        alert(time);
+    }
+	
+	function getValueMyweek() {
+        var week = document.getElementById("myweek").value;
+        alert(week);
+    }
+	
+	window.onload = function() {
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+        context.moveTo(50, 450);
+        context.lineTo(100, 50);
+        context.stroke();
+		
+		var canvas2 = document.getElementById("myCanvas2");
+        var context2 = canvas2.getContext("2d");
+        context2.arc(140, 150, 70, 1.2 * Math.PI, 1.8 * Math.PI, false);
+        context2.stroke();
+		
+		var canvas3 = document.getElementById("myCanvas3");
+        var context3 = canvas3.getContext("2d");
+        context3.lineWidth = 5;
+        context3.strokeStyle = "orange";
+        context3.moveTo(70, 150);
+        context3.lineTo(250, 50);
+        context3.stroke();
+		
+		var canvas4 = document.getElementById("myCanvas4");
+        var context4 = canvas4.getContext("2d");
+        context4.rect(50, 50, 200, 100); 
+        var grd4 = context.createLinearGradient(0, 0, canvas4.width, canvas4.height);
+        grd4.addColorStop(0, '#8ED6FF');   
+        grd4.addColorStop(1, '#004CB3');
+        context4.fillStyle = grd4;
+        context4.fill();
+        context4.stroke();
+		
+		var canvas5 = document.getElementById("myCanvas5");
+        var context5 = canvas5.getContext("2d");
+        context5.arc(150, 100, 70, 0, 2 * Math.PI, false);
+        var grd5 = context5.createRadialGradient(150, 100, 10, 160, 110, 100);
+        grd5.addColorStop(0, '#8ED6FF');   
+        grd5.addColorStop(1, '#004CB3');
+        context5.fillStyle = grd5;
+        context5.fill();
+        context5.stroke();
+		
+    };
+	
+	</script>
+</head>
+<body>
+    <form>
+        <label for="mycolor">Select Color:</label>
+        <input type="color" value="#00ff00" id="mycolor">
+        <button type="button" onclick="getValueMycolor();" class="btn btn-success">Get Value</button>
+		<hr>
+		<label for="mydate">Select Date:</label>
+        <input type="date" value="2019-04-15" id="mydate">
+        <button type="button" onclick="getValueMyDate();" class="btn btn-success">Get Value</button>
+		<hr>
+		<label for="myemail">Enter Email Address:</label>
+        <input type="email" id="myemail" required>
+        <button type="button" onclick="getValueMyemail();" class="btn btn-success">Get Value</button>
+		<hr>
+		<label for="mydatetime">Choose Date and Time:</label>
+        <input type="datetime-local" id="mydatetime">
+        <button type="button" onclick="getValueMydatetime();" class="btn btn-success">Get Value</button>
+		<hr>
+		<label for="mytime">Select Time:</label>
+        <input type="time" id="mytime">
+        <button type="button" onclick="getValueMytime();" class="btn btn-success">Get Value</button>
+		<hr>
+		<label for="myweek">Select Week:</label>
+        <input type="week" id="myweek">
+        <button type="button" onclick="getValueMyweek();" class="btn btn-success">Get Value</button>
+		<hr>
+		<canvas id="myCanvas" width="300" height="200"></canvas>
+		<hr>
+		<canvas id="myCanvas2" width="300" height="200"></canvas>
+		<hr>
+		<canvas id="myCanvas3" width="300" height="200"></canvas>
+		<hr>
+		<canvas id="myCanvas4" width="300" height="200"></canvas>
+		<hr>
+		<canvas id="myCanvas5" width="300" height="200"></canvas>
+		<hr>
+		<audio controls="controls" src="/examples/audio/birds.mp3">
+			Your browser does not support the HTML5 audio element.
+		</audio>
+		<hr>
+		
+		
+	</form>
+</body>
+</html>     
